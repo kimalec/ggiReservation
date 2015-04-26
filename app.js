@@ -55,7 +55,7 @@ function runRsv() {
         console.log(body);
     });
 
-    setTimeout(setRsv, 60 * 1000); //setRsv after 1min
+    setTimeout(setRsv, 60 * 1000 * 61); //setRsv after 1hour, 1min
 }
 
 function setRsv() {
@@ -102,6 +102,5 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
