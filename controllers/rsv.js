@@ -110,7 +110,7 @@ function getRsv(roomName, hourStart, durationHour, callback) {
         seatCode = '4';
     }
     else if (roomName == 'R27') {
-        seatCode = '6';
+        seatCode = '5';
     }
     else if (roomName == 'R25') {
         seatCode = '3';

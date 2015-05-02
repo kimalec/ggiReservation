@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var ggirsv = require('./routes/ggirsv');
+var ka = require('./controllers/keepalive');
 
 var app = express();
 
@@ -48,7 +49,7 @@ function runRsv() {
         console.log(body);
     });
 
-    rsv.getRsv('R25', '10', '6', function (error, body) {
+    rsv.getRsv('R27', '10', '6', function (error, body) {
         if (error) {
             return console.error(error);
         }
@@ -62,14 +63,19 @@ function setRsv() {
     console.log('setRsv');
     var triggerTime;
     //setTimeout when run sunday 6am UTC is saturday 21pm
-    triggerTime = rsv.calcRsvTime(6, 21);
+    triggerTime = rsv.calcRsvTime(1, 21);
 
     setTimeout(runRsv, triggerTime);
     //setTimeout(runRsv, 2*1000);
 }
 
+function setKeepAlive() {
+    setInterval(ka.sendMsg, 1000 * 30);
+}
+
 {
     setRsv();
+    setKeepAlive();
 }
 
 // catch 404 and forward to error handler
