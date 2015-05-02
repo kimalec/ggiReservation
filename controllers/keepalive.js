@@ -8,7 +8,7 @@ var req = require('request');
 
 var keepAlive = {
     sendMsg: function () {
-        var url = "http://localhost";
+        var url = "http://ggirsv.herokuapp.com";
         req.get(url, function (error, response, body) {
             if (error) {
                 console.error(error);
