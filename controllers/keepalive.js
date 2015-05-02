@@ -8,11 +8,11 @@ var req = require('request');
 
 var keepAlive = {
     sendMsg: function () {
-        var url = "http://localhost:3000";
+        var url = "http://localhost";
         req.get(url, function (error, response, body) {
             if (error) {
                 console.error(error);
-                return callback(error);
+                return;
             }
 
             console.log(body);
