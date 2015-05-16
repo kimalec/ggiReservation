@@ -63,10 +63,12 @@ function setRsv() {
     console.log('setRsv');
     var triggerTime;
     //setTimeout when run sunday 6am UTC is saturday 21pm
-    triggerTime = rsv.calcRsvTime(1, 21);
+    triggerTime = rsv.calcRsvTime(6, 21);
 
     setTimeout(runRsv, triggerTime);
-    //setTimeout(runRsv, 2*1000);
+
+    //triggerTime = rsv.calcRsvTime(1, 21); //monday
+    //setTimeout(runRsv, triggerTime);
 }
 
 function setKeepAlive() {
